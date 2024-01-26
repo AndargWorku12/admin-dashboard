@@ -1,0 +1,79 @@
+/* Style for the entire Products component */
+
+.product-container {
+    margin: 20px;
+}
+
+
+/* Style for the Products header */
+
+.product-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+/* Style for the list (table) */
+
+.product-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Style for each product item (table row) */
+
+.product-container .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+
+/* Style for the buttons in each product item */
+
+.product-container .product-item button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* Style for the input field in each product item */
+
+.product-container .product-item input {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+
+/* Style for the Create Product section */
+
+.product-container .product-create {
+    margin-top: 20px;
+}
+
+
+/* Style for the input field and button in the Create Product section */
+
+.product-container .product-create input,
+.product-container .product-create button {
+    margin-right: 10px;
+}
+
+
+/* Optional: Add some responsive styling */
+
+@media (max-width: 600px) {
+    .product-container .product-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .product-container .product-item button,
+    .product-container .product-create button {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}

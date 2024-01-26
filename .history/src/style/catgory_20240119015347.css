@@ -1,0 +1,79 @@
+/* Style for the entire Category component */
+
+.Category {
+    margin: 20px;
+}
+
+
+/* Style for the Categories header */
+
+.Category h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+/* Style for the list (table) */
+
+.Category ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Style for each category item (table row) */
+
+.Category li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+
+/* Style for the buttons in each category item */
+
+.Category li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* Style for the input field in each category item */
+
+.Category li input {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+
+/* Style for the Create Category section */
+
+.Category .create-category {
+    margin-top: 20px;
+}
+
+
+/* Style for the input field and button in the Create Category section */
+
+.Category .create-category input,
+.Category .create-category button {
+    margin-right: 10px;
+}
+
+
+/* Optional: Add some responsive styling */
+
+@media (max-width: 600px) {
+    .Category li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .Category li button,
+    .Category .create-category button {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
