@@ -46,11 +46,8 @@ const AnalyticsPage: React.FC = () => {
   };
 
   return (
-    <>
-    <h2 className='text-white font-bold text-2xl'>Analytics page</h2>
     <div className="container mx-auto my-8 ">
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-28">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Customer Reviews Chart */}
         <div className="bg-white p-4 rounded-lg shadow-lg">
           <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
@@ -110,7 +107,6 @@ const AnalyticsPage: React.FC = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 

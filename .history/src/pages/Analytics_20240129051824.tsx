@@ -46,11 +46,8 @@ const AnalyticsPage: React.FC = () => {
   };
 
   return (
-    <>
-    <h2 className='text-white font-bold text-2xl'>Analytics page</h2>
-    <div className="container mx-auto my-8 ">
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-28">
+    <div className="container mx-auto my-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Customer Reviews Chart */}
         <div className="bg-white p-4 rounded-lg shadow-lg">
           <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
@@ -70,10 +67,8 @@ const AnalyticsPage: React.FC = () => {
         </div>
 
         {/* Total Metrics Cards */}
-        <div className='col-span-3 md:col-span-2 lg:col-span-1 flex justify-between gap-10'>
-
-        
-        <div className="col-span-3 md:col-span-2 lg:col-span-1 flex justify-between gap-8 w-48">
+        <div className="block">
+        <div className="col-span-3 md:col-span-2 lg:col-span-1 flex justify-between">
           <div className="bg-white p-4 rounded-lg shadow-lg flex-1 mr-4">
             <h2 className="text-xl font-bold mb-4">Total Reviews</h2>
             <p className="text-4xl font-bold">135</p>
@@ -90,12 +85,12 @@ const AnalyticsPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-3 md:col-span-2 lg:col-span-1 flex justify-between gap-8 w-48">
+        <div className="col-span-3 md:col-span-2 lg:col-span-1 flex justify-between">
           <div className="bg-white p-4 rounded-lg shadow-lg flex-1 mr-4">
             <h2 className="text-xl font-bold mb-4">Total Sales</h2>
             <p className="text-4xl font-bold">$12,345</p>
           </div>
-<div className='gap-8 col-span-3 md:col-span-2 lg:col-span-1 flex justify-between w-48'>
+
           <div className="bg-white p-4 rounded-lg shadow-lg flex-1 mr-4">
             <h2 className="text-xl font-bold mb-4">Total Revenue</h2>
             <p className="text-4xl font-bold">$9,876</p>
@@ -104,13 +99,12 @@ const AnalyticsPage: React.FC = () => {
           <div className="bg-white p-4 rounded-lg shadow-lg flex-1">
             <h2 className="text-xl font-bold mb-4">Total Categories</h2>
             <p className="text-4xl font-bold">15</p>
-          </div>
+
           </div>
         </div>
         </div>
       </div>
     </div>
-    </>
   );
 };
 

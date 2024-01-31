@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 // import SignUpForm from './pages/LoginPopup'
 import Orders from './pages/Orders';
-import Category from './pages/CategoryPage';
+import Category from './pages/Category';
 import Login from './pages/Login'
 import Analytics from './pages/Analytics';
 import CustemerReview from './pages/CustemerReview';
@@ -298,12 +298,12 @@ const handleDeleteCategory = (categoryId: string) => {
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/review"element={<CustemerReview username="John" joinedDate="2022-01-01" reviewDate="2022-01-15" reviewText="Lorem ipsum" />}
 />
-
+           <Route path='/product' element={<ProductList/>}/>
         <Route path="/analytics" element={<Analytics  />} />
-        <Route
+        {/* <Route
   path="/product"
-  element={<ProductList />}
-/>
+  element={<ProductList products={products} onCreate={handleCreate} onDelete={handleDelete} onUpdate={handleUpdate} />}
+/> */}
         <Route path="/shop" element={<ShopCard />} />
         <Route
         path="/orders"
@@ -319,7 +319,12 @@ const handleDeleteCategory = (categoryId: string) => {
        
         <Route
             path="/category"
-            element={<Category />}
+            element={<Category
+              categories={categories}
+              onCreate={handleCreateCategory}
+              onDelete={handleDeleteCategory}
+              onUpdate={handleUpdateCategory}
+            />}
           />
       
       </Routes>

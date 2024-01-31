@@ -89,9 +89,7 @@ const Dashboard: React.FC<DashboardProps> = ({ saleData, revenueData }) => {
         </div>
       </div>
       </div>
-      <div>
       <AnalyticsPage/>
-      </div>
     </div>
   );
 };

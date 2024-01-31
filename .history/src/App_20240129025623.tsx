@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 // import SignUpForm from './pages/LoginPopup'
 import Orders from './pages/Orders';
-import Category from './pages/CategoryPage';
+import Category from './pages/Category';
 import Login from './pages/Login'
 import Analytics from './pages/Analytics';
 import CustemerReview from './pages/CustemerReview';
@@ -14,7 +14,6 @@ import ShopCard from './pages/ShopCard';
 import './App.css'
 import SignUpForm from './pages/SignUpForm';
 import ForgotPassword from './pages/ForgetPassword';
-import AnalyticsPage from './pages/Analytics';
 
 
 
@@ -93,75 +92,75 @@ const App: React.FC = () => {
 
 
 // for the product page to handle
-  const [products, setProducts] = useState<Product[]>([
+  // const [products, setProducts] = useState<Product[]>([
 
    
-    {
-      id: '1',
-      photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-      name: 'Product 1',
-      price: 29.99,
-      category: 'Electronics',
-    },
-    {
-      id: '2',
-      photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-      name: 'Product 2',
-      price: 49.99,
-      category: 'Clothing',
-    },
-    {
-      id: '3',
-      photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-      name: 'Product 3',
-      price: 9.99,
-      category: 'Books',
-    },
-    {
-      id: '4',
-      photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-      name: 'Product 4',
-      price: 79.99,
-      category: 'Home and Kitchen',
-    },
-    {
-      id: '5',
-      photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-      name: 'Product 5',
-      price: 39.99,
-      category: 'Toys',
-    },
+  //   {
+  //     id: '1',
+  //     photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+  //     name: 'Product 1',
+  //     price: 29.99,
+  //     category: 'Electronics',
+  //   },
+  //   {
+  //     id: '2',
+  //     photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+  //     name: 'Product 2',
+  //     price: 49.99,
+  //     category: 'Clothing',
+  //   },
+  //   {
+  //     id: '3',
+  //     photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+  //     name: 'Product 3',
+  //     price: 9.99,
+  //     category: 'Books',
+  //   },
+  //   {
+  //     id: '4',
+  //     photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+  //     name: 'Product 4',
+  //     price: 79.99,
+  //     category: 'Home and Kitchen',
+  //   },
+  //   {
+  //     id: '5',
+  //     photo: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+  //     name: 'Product 5',
+  //     price: 39.99,
+  //     category: 'Toys',
+  //   },
     
    
    
-  ]);
+  // ]);
 
   // Function to handle creating a new product
-  const handleCreate = (newProduct: Product) => {
-    setProducts((prevProducts) => [...prevProducts, newProduct]);
-  };
+  // const handleCreate = (newProduct: Product) => {
+  //   setProducts((prevProducts) => [...prevProducts, newProduct]);
+  // };
 
-  // Function to handle updating a product
+  // // Function to handle updating a product
  
-  const handleUpdate = (productId: string, newName: string, newPrice: number) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === productId
-          ? { ...product, name: newName, price: newPrice }
-          : product
-      )
-    );
-  };
+  // const handleUpdate = (productId: string, newName: string, newPrice: number) => {
+  //   setProducts((prevProducts) =>
+  //     prevProducts.map((product) =>
+  //       product.id === productId
+  //         ? { ...product, name: newName, price: newPrice }
+  //         : product
+  //     )
+  //   );
+  // };
  
 
 
-  // Function to handle deleting a product
-  const handleDelete = (productId: string) => {
-    setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
-  };
+//   // Function to handle deleting a product
+//   const handleDelete = (productId: string) => {
+//     setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
+//   };
 
-//  for AnalyticsPage
-// for category page
+// //  for AnalyticsPage
+// // for category page
 
 
 const [categories, setCategories] = useState<CategoryType[]>([
@@ -287,22 +286,21 @@ const handleDeleteCategory = (categoryId: string) => {
   };
   
   return (
-    <div >
     <BrowserRouter>
     <Sidebar>
       <Routes>
-        <Route path="/" element={<Dashboard saleData={saleData} revenueData={revenueData}  />} />
-        <Route path="/dashboard" element={<Dashboard saleData={saleData} revenueData={revenueData}  />} />
+        <Route path="/" element={<Dashboard saleData={saleData} revenueData={revenueData} />} />
+        <Route path="/dashboard" element={<Dashboard saleData={saleData} revenueData={revenueData} />} />
        <Route path="/login" element={<Login/>}/>
        <Route path='/forget-password' element={<ForgotPassword/>}/>
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/review"element={<CustemerReview username="John" joinedDate="2022-01-01" reviewDate="2022-01-15" reviewText="Lorem ipsum" />}
 />
 
-        <Route path="/analytics" element={<Analytics  />} />
+        <Route path="/analytics" element={<Analytics saleData={saleData} />} />
         <Route
   path="/product"
-  element={<ProductList />}
+  element={<ProductList/>}
 />
         <Route path="/shop" element={<ShopCard />} />
         <Route
@@ -319,13 +317,17 @@ const handleDeleteCategory = (categoryId: string) => {
        
         <Route
             path="/category"
-            element={<Category />}
+            element={<Category
+              categories={categories}
+              onCreate={handleCreateCategory}
+              onDelete={handleDeleteCategory}
+              onUpdate={handleUpdateCategory}
+            />}
           />
       
       </Routes>
     </Sidebar>
   </BrowserRouter>
-  </div>
   );
 };
 

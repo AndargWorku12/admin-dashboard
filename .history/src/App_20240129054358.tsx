@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 // import SignUpForm from './pages/LoginPopup'
 import Orders from './pages/Orders';
-import Category from './pages/CategoryPage';
+import Category from './pages/Category';
 import Login from './pages/Login'
 import Analytics from './pages/Analytics';
 import CustemerReview from './pages/CustemerReview';
@@ -287,12 +287,11 @@ const handleDeleteCategory = (categoryId: string) => {
   };
   
   return (
-    <div >
     <BrowserRouter>
     <Sidebar>
       <Routes>
-        <Route path="/" element={<Dashboard saleData={saleData} revenueData={revenueData}  />} />
-        <Route path="/dashboard" element={<Dashboard saleData={saleData} revenueData={revenueData}  />} />
+        <Route path="/" element={<Dashboard saleData={saleData} revenueData={revenueData} Analytics={AnalyticsPage} />} />
+        <Route path="/dashboard" element={<Dashboard saleData={saleData} revenueData={revenueData} Analytics={AnalyticsPage} />} />
        <Route path="/login" element={<Login/>}/>
        <Route path='/forget-password' element={<ForgotPassword/>}/>
         <Route path="/signup" element={<SignUpForm />} />
@@ -302,7 +301,7 @@ const handleDeleteCategory = (categoryId: string) => {
         <Route path="/analytics" element={<Analytics  />} />
         <Route
   path="/product"
-  element={<ProductList />}
+  element={<ProductList products={products} onCreate={handleCreate} onDelete={handleDelete} onUpdate={handleUpdate} />}
 />
         <Route path="/shop" element={<ShopCard />} />
         <Route
@@ -319,13 +318,17 @@ const handleDeleteCategory = (categoryId: string) => {
        
         <Route
             path="/category"
-            element={<Category />}
+            element={<Category
+              categories={categories}
+              onCreate={handleCreateCategory}
+              onDelete={handleDeleteCategory}
+              onUpdate={handleUpdateCategory}
+            />}
           />
       
       </Routes>
     </Sidebar>
   </BrowserRouter>
-  </div>
   );
 };
 

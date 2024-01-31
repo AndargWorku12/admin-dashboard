@@ -83,8 +83,8 @@ const ProductList: React.FC = () => {
   };
 
   return (
-    <div className={`container mx-auto p-6 ${nightMode ? 'bg-gray-900 text-white' : ''} block`}> 
-      <h1 className="text-3xl font-bold mb-6">Product List Page</h1>
+    <div className={`container mx-auto p-6 ${nightMode ? 'bg-gray-900 text-white' : ''}`}>
+      <h1 className="text-3xl font-bold mb-6">Product Page</h1>
 
       <button
         onClick={() => {
