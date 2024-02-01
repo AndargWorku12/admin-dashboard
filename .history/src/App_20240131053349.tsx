@@ -287,7 +287,7 @@ const handleDeleteCategory = (categoryId: string) => {
   };
   
   return (
-    <div>
+    <div >
     <BrowserRouter>
     <Sidebar>
       <Routes>

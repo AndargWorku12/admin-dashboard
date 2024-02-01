@@ -57,7 +57,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onDelete, onEdit,
     >
       <div className="mb-4 flex justify-between items-center">
         <div className="flex items-center">
-          <label className="mr-2"> Filter by Name:</label>
+          <label className="mr-2">Name:</label>
           <input
             type="text"
             value={filter.name}
@@ -66,7 +66,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onDelete, onEdit,
           />
         </div>
         <div className="flex items-center ml-4">
-          <label className="mr-2"> Filter by Category:</label>
+          <label className="mr-2">Category:</label>
           <input
             type="text"
             value={filter.category}
@@ -75,7 +75,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onDelete, onEdit,
           />
         </div>
         <div className="flex items-center ml-4">
-          <label className="mr-2"> Filter by Date:</label>
+          <label className="mr-2">Date:</label>
           <input
             type="text"
             value={filter.date}
@@ -120,7 +120,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onDelete, onEdit,
             <tr key={product.id} className="border-b">
               <td className="py-2 px-4 border-r">{product.id}</td>
               <td className="py-2 px-4 border-r">
-                <img src={product.photo} alt={`Product ${product.name}`} className="max-w-32 h-auto" />
+                <img src={product.photo} alt={`Product ${product.name}`} className="max-w-30 h-auto" />
               </td>
               <td className="py-2 px-4 border-r">{product.name}</td>
               <td className="py-2 px-4 border-r">{product.category}</td>

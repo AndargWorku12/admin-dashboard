@@ -2,7 +2,7 @@ import React from 'react'
 
 const ShopCard = () => {
   return (
-    <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 -mt-11">
+    <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 mt-0">
       <p className="text-4xl">List of shops</p>
 
       <div className="border-b mb-5 flex justify-between text-sm">

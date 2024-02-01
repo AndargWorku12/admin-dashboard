@@ -88,8 +88,8 @@ const Orders: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-10 p-6  rounded-lg shadow-lg block bg-gray-800">
-      <h1 className="text-3xl font-semibold mb-6 text-white ">Order Page</h1>
+    <div className="container mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg block">
+      <h1 className="text-3xl font-semibold mb-6 text-white bg-gray-900">Order Page</h1>
       <OrderTable
         orders={orders}
         onEdit={(order) => {

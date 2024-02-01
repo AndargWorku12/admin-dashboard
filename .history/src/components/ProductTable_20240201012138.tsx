@@ -52,7 +52,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onDelete, onEdit,
   return (
     <div
       className={`overflow-x-auto bg-white border border-gray-300 p-6 rounded-lg ${
-        nightMode ? 'shadow-xl' : 'shadow-md'
+        nightMode ? 'shadow-xl text-white ' : 'shadow-md text-white'
       } transition duration-500 ease-in-out`}
     >
       <div className="mb-4 flex justify-between items-center">

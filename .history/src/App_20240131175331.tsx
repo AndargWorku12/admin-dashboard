@@ -287,7 +287,7 @@ const handleDeleteCategory = (categoryId: string) => {
   };
   
   return (
-    <div>
+    <div className='bg-gary-900'>
     <BrowserRouter>
     <Sidebar>
       <Routes>

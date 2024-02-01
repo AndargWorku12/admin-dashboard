@@ -12,44 +12,8 @@ interface Order {
   totalPrice: number;
 }
 
-const Orders: React.FC = () => {
+const OrderPage: React.FC = () => {
   const [orders, setOrders] = useState<Order[]>([
-    {
-      id: '1',
-      name: 'Product A',
-      category: 'Category X',
-      price: 20,
-      quantity: 3,
-      photo: 'photo-url-1',
-      totalPrice: 60,
-    },
-    {
-      id: '1',
-      name: 'Product A',
-      category: 'Category X',
-      price: 20,
-      quantity: 3,
-      photo: 'photo-url-1',
-      totalPrice: 60,
-    },
-    {
-      id: '1',
-      name: 'Product A',
-      category: 'Category X',
-      price: 20,
-      quantity: 3,
-      photo: 'photo-url-1',
-      totalPrice: 60,
-    },
-    {
-      id: '1',
-      name: 'Product A',
-      category: 'Category X',
-      price: 20,
-      quantity: 3,
-      photo: 'photo-url-1',
-      totalPrice: 60,
-    },
     {
       id: '1',
       name: 'Product A',
@@ -88,8 +52,8 @@ const Orders: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-10 p-6  rounded-lg shadow-lg block bg-gray-800">
-      <h1 className="text-3xl font-semibold mb-6 text-white ">Order Page</h1>
+    <div className="container mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+      <h1 className="text-3xl font-semibold mb-6">Order Page</h1>
       <OrderTable
         orders={orders}
         onEdit={(order) => {
@@ -121,7 +85,7 @@ const Orders: React.FC = () => {
   );
 };
 
-export default Orders;
+export default OrderPage;
 
 
 

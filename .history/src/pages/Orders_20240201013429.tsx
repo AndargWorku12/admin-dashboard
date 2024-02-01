@@ -20,7 +20,7 @@ const Orders: React.FC = () => {
       category: 'Category X',
       price: 20,
       quantity: 3,
-      photo: 'photo-url-1',
+      photo: 'https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.jpg?s=612x612&w=0&k=20&c=A3w_a9q3Gz-tWkQL6K00xu7UHdN5LLZefzPDp-wNkSU=',
       totalPrice: 60,
     },
     {
@@ -29,7 +29,7 @@ const Orders: React.FC = () => {
       category: 'Category X',
       price: 20,
       quantity: 3,
-      photo: 'photo-url-1',
+      photo: 'https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.jpg?s=612x612&w=0&k=20&c=A3w_a9q3Gz-tWkQL6K00xu7UHdN5LLZefzPDp-wNkSU=',
       totalPrice: 60,
     },
     {
@@ -38,7 +38,7 @@ const Orders: React.FC = () => {
       category: 'Category X',
       price: 20,
       quantity: 3,
-      photo: 'photo-url-1',
+      photo: 'https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.jpg?s=612x612&w=0&k=20&c=A3w_a9q3Gz-tWkQL6K00xu7UHdN5LLZefzPDp-wNkSU=',
       totalPrice: 60,
     },
     {
@@ -47,7 +47,7 @@ const Orders: React.FC = () => {
       category: 'Category X',
       price: 20,
       quantity: 3,
-      photo: 'photo-url-1',
+      photo: 'https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.jpg?s=612x612&w=0&k=20&c=A3w_a9q3Gz-tWkQL6K00xu7UHdN5LLZefzPDp-wNkSU=',
       totalPrice: 60,
     },
     {
@@ -56,7 +56,7 @@ const Orders: React.FC = () => {
       category: 'Category X',
       price: 20,
       quantity: 3,
-      photo: 'photo-url-1',
+      photo: 'https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.jpg?s=612x612&w=0&k=20&c=A3w_a9q3Gz-tWkQL6K00xu7UHdN5LLZefzPDp-wNkSU=',
       totalPrice: 60,
     },
     // Add more initial orders as needed
@@ -88,7 +88,7 @@ const Orders: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-10 p-6  rounded-lg shadow-lg block bg-gray-800">
+    <div className="container mx-auto mt-10 p-6  rounded-lg shadow-lg block">
       <h1 className="text-3xl font-semibold mb-6 text-white ">Order Page</h1>
       <OrderTable
         orders={orders}

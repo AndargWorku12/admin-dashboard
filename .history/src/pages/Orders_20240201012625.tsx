@@ -88,8 +88,15 @@ const Orders: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-10 p-6  rounded-lg shadow-lg block bg-gray-800">
+    <div className="container mx-auto mt-10 p-6  rounded-lg shadow-lg block">
       <h1 className="text-3xl font-semibold mb-6 text-white ">Order Page</h1>
+
+      <button
+        onClick={() => setModalType('add')}
+        className="bg-blue-500 text-white px-4 py-2 rounded-md mt-6 hover:bg-blue-600"
+      >
+        Add Order
+      </button>
       <OrderTable
         orders={orders}
         onEdit={(order) => {
@@ -111,12 +118,7 @@ const Orders: React.FC = () => {
         />
       )}
 
-      <button
-        onClick={() => setModalType('add')}
-        className="bg-blue-500 text-white px-4 py-2 rounded-md mt-6 hover:bg-blue-600"
-      >
-        Add Order
-      </button>
+     
     </div>
   );
 };
