@@ -1,0 +1,33 @@
+.night {
+    background: #37305F;
+    color: #fff
+}
+
+.cancel {
+    background: #37305F;
+    color: #fff;
+}
+
+.yes {
+    background: #F26A8D;
+    color: #fff;
+}
+
+.filter {
+    background: #F26A8D;
+    color: #fff;
+}
+
+.filter:hover {
+    background: #37305F;
+    color: #fff;
+}
+
+.edit {
+    color: #37305F;
+    text-decoration: none;
+}
+
+.delete {
+    color: #F26A8D;
+}

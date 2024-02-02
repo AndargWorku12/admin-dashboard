@@ -1,0 +1,17 @@
+.card1 {
+    background: #37305F;
+    color: #fff;
+}
+
+.card2 {
+    background: #F26A8D;
+    color: black;
+}
+
+.customer {
+    width: 50%;
+}
+
+.orders {
+    width: 50%;
+}

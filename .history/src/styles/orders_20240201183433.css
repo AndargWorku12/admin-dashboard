@@ -1,0 +1,13 @@
+.main {
+    box-shadow: 5px 5px 5px rgb(128, 128, 128);
+}
+
+.add {
+    background: #37305A;
+    color: #fff;
+}
+
+.add :hover {
+    background: gray;
+    color: #fff;
+}
