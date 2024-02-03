@@ -117,22 +117,21 @@ const CustomerReview: React.FC<ReviewProps> = ({ username, joinedDate, reviewDat
         It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën
         to a Ferrari. This watch was well under £100! An absolute bargain.
       </p>
-      <a href="#" className="block mb-5 text-sm font-medium text-pink-500 hover:underline dark:text-pink-600">
+      <a href="#" className="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
         Read more
       </a>
       <aside>
         <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">19 people found this helpful</p>
         <div className="flex items-center mt-3">
-          <button className="bg-gray-700 text-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xs px-2 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+          <button className="bg-gray-900 text-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xs px-2 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
             Helpful
           </button>
-          <button className="ps-4 text-sm font-medium text-pink-500 hover:underline dark:text-pink-600 border-gray-200 ms-4 border-s md:mb-0 dark:border-gray-600">
+          <button className="ps-4 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 border-gray-200 ms-4 border-s md:mb-0 dark:border-gray-600">
             Report abuse
           </button>
         </div>
       </aside>
     </article>
-   
     </div>
   );
 };

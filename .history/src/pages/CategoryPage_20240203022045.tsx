@@ -80,8 +80,8 @@ const CategoryPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 block">
-      <h1 className="text-2xl font-bold mb-14"> List of Categories</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4"> List of Categories</h1>
       
       {/* Add Category Button */}
       <div className="mb-4">
@@ -124,32 +124,7 @@ const CategoryPage: React.FC = () => {
       )}
 
       {/* Display Categories */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  {categories.map((category) => (
-    <div key={category.id} className="bg-white p-4 rounded-lg shadow-lg">
-      <img
-        src={category.photo instanceof File ? URL.createObjectURL(category.photo) : category.photo}
-        alt={category.name}
-        className="mb-2 w-full h-32 object-cover rounded"
-      />
-      <div>
-        <h2 className="text-lg font-bold mb-2">{category.name}</h2>
-        <p className="text-gray-600">{category.description}</p>
-        <div className="mt-4 flex space-x-2 justify-end">
-          <button onClick={() => setEditingCategory(category)} className="cat__create p-2 rounded">
-            Edit
-          </button>
-          <button onClick={() => confirmDelete(category)} className="cat__cancel p-2 rounded">
-            Delete
-          </button>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-      {/* <div className="flex space-x-4 col-span-4">
+      <div className="flex space-x-4">
         {categories.map((category) => (
           <div key={category.id} className="flex-shrink-0 bg-white p-4 rounded-lg shadow-lg">
             <img src={category.photo instanceof File ? URL.createObjectURL(category.photo) : category.photo} alt={category.name}
@@ -157,20 +132,20 @@ const CategoryPage: React.FC = () => {
             <div>
               <h2 className="text-lg font-bold mb-2">{category.name}</h2>
               <p className="text-gray-600">{category.description}</p>
-              <div className="mt-4 flex space-x-2 justify-end">
-                <button onClick={() => setEditingCategory(category)} className="cat__create p-2 rounded ">Edit</button>
-                <button onClick={() => confirmDelete(category)} className="cat__cancel p-2 rounded ">Delete</button>
+              <div className="mt-4 flex space-x-2">
+                <button onClick={() => setEditingCategory(category)} className="cat__create p-2 rounded w-12">Edit</button>
+                <button onClick={() => confirmDelete(category)} className="cat__cancel p-2 rounded w-12">Delete</button>
               </div>
             </div>
           </div>
         ))}
-      </div> */}
+      </div>
 
       {/* Edit Category Modal */}
       {editingCategory && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Edit Category</h2>
+            <h2 className="text-2xl font-bold mb-4">Edit Category</h2>
             <input
               type="text"
               placeholder="Name"
@@ -194,8 +169,8 @@ const CategoryPage: React.FC = () => {
               className="p-2 mb-2 border rounded"
             />
             <div className="flex justify-end">
-              <button onClick={() => updateCategory(editingCategory)} className="cat__create p-2 rounded">Save</button>
-              <button onClick={() => setEditingCategory(null)} className="cat__cancel ml-2  p-2 rounded">Cancel</button>
+              <button onClick={() => updateCategory(editingCategory)} className="bg-blue-500 text-white p-2 rounded">Save</button>
+              <button onClick={() => setEditingCategory(null)} className="ml-2 bg-gray-400 text-white p-2 rounded">Cancel</button>
             </div>
           </div>
         </div>
@@ -205,10 +180,10 @@ const CategoryPage: React.FC = () => {
       {deletingCategory && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg">
-            <p className="text-lg font-semibold mb-4">Are you sure you want to delete {deletingCategory.name}?</p>
+            <p className="text-xl font-bold mb-4">Are you sure you want to delete {deletingCategory.name}?</p>
             <div className="flex justify-end">
-              <button onClick={() => deleteCategory(deletingCategory.id)} className="cat__cancel p-2 rounded">Delete</button>
-              <button onClick={() => setDeletingCategory(null)} className="cat__create ml-2 p-2 rounded">Cancel</button>
+              <button onClick={() => deleteCategory(deletingCategory.id)} className="bg-red-500 text-white p-2 rounded">Yes, Delete</button>
+              <button onClick={() => setDeletingCategory(null)} className="ml-2 bg-gray-400 text-white p-2 rounded">Cancel</button>
             </div>
           </div>
         </div>

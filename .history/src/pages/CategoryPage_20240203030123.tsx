@@ -124,34 +124,9 @@ const CategoryPage: React.FC = () => {
       )}
 
       {/* Display Categories */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  {categories.map((category) => (
-    <div key={category.id} className="bg-white p-4 rounded-lg shadow-lg">
-      <img
-        src={category.photo instanceof File ? URL.createObjectURL(category.photo) : category.photo}
-        alt={category.name}
-        className="mb-2 w-full h-32 object-cover rounded"
-      />
-      <div>
-        <h2 className="text-lg font-bold mb-2">{category.name}</h2>
-        <p className="text-gray-600">{category.description}</p>
-        <div className="mt-4 flex space-x-2 justify-end">
-          <button onClick={() => setEditingCategory(category)} className="cat__create p-2 rounded">
-            Edit
-          </button>
-          <button onClick={() => confirmDelete(category)} className="cat__cancel p-2 rounded">
-            Delete
-          </button>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-      {/* <div className="flex space-x-4 col-span-4">
+      <div className="flex space-x-4 col-span-4">
         {categories.map((category) => (
-          <div key={category.id} className="flex-shrink-0 bg-white p-4 rounded-lg shadow-lg">
+          <div key={category.id} className=" bg-white p-4 rounded-lg shadow-lg col-span-4 block">
             <img src={category.photo instanceof File ? URL.createObjectURL(category.photo) : category.photo} alt={category.name}
              className="mb-2 w-full h-32 object-cover rounded" />
             <div>
@@ -164,7 +139,7 @@ const CategoryPage: React.FC = () => {
             </div>
           </div>
         ))}
-      </div> */}
+      </div>
 
       {/* Edit Category Modal */}
       {editingCategory && (

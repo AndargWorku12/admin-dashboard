@@ -35,7 +35,7 @@ const ShopCard = () => {
               <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
             </a>
             <a href="#!">
-              <div className="add__shop text-xs absolute top-0 right-0  px-4 py-2  mt-3 mr-3 transition duration-500 ease-in-out">
+              <div className="add text-xs absolute top-0 right-0  px-4 py-2 text-white mt-3 mr-3 transition duration-500 ease-in-out">
                 Add to chart
               </div>
             </a>
@@ -108,7 +108,7 @@ const ShopCard = () => {
               <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
             </a>
             <a href="#!">
-              <div className=" add__shop text-xs absolute top-0 right-0  px-4 py-2  mt-3 mr-3 transition duration-500 ease-in-out">
+              <div className=" add text-xs absolute top-0 right-0  px-4 py-2  mt-3 mr-3 transition duration-500 ease-in-out">
                 Add to chart
               </div>
             </a>
@@ -182,7 +182,7 @@ const ShopCard = () => {
               <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
             </a>
             <a href="#!">
-              <div className="add__shop text-xs absolute top-0 right-0 px-4 py-2 text-white mt-3 mr-3 transition duration-500 ease-in-out">
+              <div className="add text-xs absolute top-0 right-0 px-4 py-2 text-white mt-3 mr-3 transition duration-500 ease-in-out">
                 Add to chart
               </div>
             </a>

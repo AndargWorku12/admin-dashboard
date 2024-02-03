@@ -1,12 +1,12 @@
 import React from 'react'
-import '../styles/shopCard.css'
+
 const ShopCard = () => {
   return (
     <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 -mt-11">
       <p className="text-4xl">List of shops</p>
 
       <div className="border-b mb-5 flex justify-between text-sm">
-        <div className="text-gray-800 flex items-center pb-2 pr-2 border-b-2 border-gray-600 uppercase">
+        <div className="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
           <svg
             className="h-6 mr-3"
             version="1.1"
@@ -35,7 +35,7 @@ const ShopCard = () => {
               <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
             </a>
             <a href="#!">
-              <div className="add__shop text-xs absolute top-0 right-0  px-4 py-2  mt-3 mr-3 transition duration-500 ease-in-out">
+              <div className="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
                 Add to chart
               </div>
             </a>
@@ -108,7 +108,7 @@ const ShopCard = () => {
               <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
             </a>
             <a href="#!">
-              <div className=" add__shop text-xs absolute top-0 right-0  px-4 py-2  mt-3 mr-3 transition duration-500 ease-in-out">
+              <div className="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
                 Add to chart
               </div>
             </a>
@@ -182,7 +182,7 @@ const ShopCard = () => {
               <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
             </a>
             <a href="#!">
-              <div className="add__shop text-xs absolute top-0 right-0 px-4 py-2 text-white mt-3 mr-3 transition duration-500 ease-in-out">
+              <div className="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
                 Add to chart
               </div>
             </a>
