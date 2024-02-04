@@ -14,7 +14,6 @@ import {
 import { RiAdminFill } from 'react-icons/ri';
 import { AiOutlineSafetyCertificate } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import { IoIosContacts } from 'react-icons/io';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
 
@@ -82,7 +81,7 @@ interface MenuItem {
     {
         path: '/contact',
         name: 'Contact page',
-        icon: <IoIosContacts />,
+        icon: <FaShoppingCart />,
     },
     {
         path: '/roles',

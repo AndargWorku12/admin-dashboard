@@ -11,10 +11,6 @@ import {
     FaClipboardList,
     FaShoppingCart,
 } from 'react-icons/fa';
-import { RiAdminFill } from 'react-icons/ri';
-import { AiOutlineSafetyCertificate } from 'react-icons/ai';
-import { BsPerson } from 'react-icons/bs';
-import { IoIosContacts } from 'react-icons/io';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
 
@@ -82,22 +78,22 @@ interface MenuItem {
     {
         path: '/contact',
         name: 'Contact page',
-        icon: <IoIosContacts />,
+        icon: <FaShoppingCart />,
     },
     {
         path: '/roles',
         name: 'Roles of user',
-        icon: <RiAdminFill />,
+        icon: <FaShoppingCart />,
     },
     {
         path: '/user',
         name: 'user page',
-        icon: <BsPerson />,
+        icon: <FaShoppingCart />,
     },
     {
         path: '/permission',
         name: 'permission information',
-        icon: <AiOutlineSafetyCertificate />,
+        icon: <FaShoppingCart />,
     },
     ];
 
