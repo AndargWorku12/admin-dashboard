@@ -69,13 +69,27 @@ const App: React.FC = () => {
        <Route path="/login" element={<Login/>}/>
        <Route path='/forget-password' element={<ForgotPassword/>}/>
         <Route path="/signup" element={<SignUpForm />} />
-        <Route path="/review"element={<CustemerReview  />}/>
+        <Route path="/review"element={<CustemerReview username="John" joinedDate="2022-01-01" reviewDate="2022-01-15" reviewText="Lorem ipsum" />}
+/>
+
         <Route path="/analytics" element={<Analytics  />} />
-        <Route path="/product" element={<ProductList />}/>
+        <Route
+  path="/product"
+  element={<ProductList />}
+/>
         <Route path="/shop" element={<ShopCard />} />
-        <Route path="/orders" element={<Orders/> }/>
+        <Route
+        path="/orders"
+        element={
+          <Orders
+/>
+        }
+      />
        
-        <Route path="/category" element={<Category />} />
+        <Route
+            path="/category"
+            element={<Category />}
+          />
       
       </Routes>
     </Sidebar>

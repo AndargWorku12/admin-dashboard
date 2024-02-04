@@ -1,53 +1,61 @@
 
-
-// src/components/ReviewPage.tsx
-
+// src/App.tsx
 import React, { useState, ChangeEvent } from 'react';
-import '../styles/review.css';
 
+import '../styles/review.css'
 interface Review {
-  id: string;
+  id: number;
   name: string;
   comment: string;
-  rating: string; // Rating represented as a string of star icons
+  rating: number;
   photo: string;
 }
 
+const StarIcon: React.FC<{ filled: boolean }> = ({ filled }) => (
+  <svg
+    className={`w-6 h-6 fill-current ${filled ? 'text-yellow-500' : 'text-gray-300'}`}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 2C5.373 2 0 7.373 0 14s5.373 12 12 12 12-5.373 12-12S18.627 2 12 2zm0 22c-6.627 0-12-5.373-12-12S5.373 2 12 2s12 5.373 12 12-5.373 12-12 12zm-1-17v8h2v-8h-2zm0 10v2h2v-2h-2z" />
+  </svg>
+);
+
 const ReviewPage: React.FC = () => {
   const initialReviews: Review[] = [
-    { id: '1', name: 'John Doe', comment: 'Great product!', rating: '★★★★★', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-    { id: '2', name: 'Jane Smith', comment: 'Not bad, but could be better.', rating: '★★★☆☆', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-    { id: '3', name: 'Alice Johnson', comment: 'Excellent service!', rating: '★★★★☆', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-    { id: '4', name: 'Bob Williams', comment: 'Product was damaged upon arrival.', rating: '★★☆☆☆', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-    { id: '5', name: 'Eva Davis', comment: 'Fast shipping, good quality.', rating: '★★★★★', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
+    { id: 1, name: 'John Doe', comment: 'Great product!', rating: 5, photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
+    { id: 2, name: 'Jane Smith', comment: 'Not bad, but could be better.', rating: 3, photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
+    { id: 3, name: 'Alice Johnson', comment: 'Excellent service!', rating: 4, photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
+    { id: 4, name: 'Bob Williams', comment: 'Product was damaged upon arrival.', rating: 2, photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
+    { id: 5, name: 'Eva Davis', comment: 'Fast shipping, good quality.', rating: 5, photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
   ];
 
   const [reviews, setReviews] = useState<Review[]>(initialReviews);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [confirmModalOpen, setConfirmModalOpen] = useState<boolean>(false);
   const [newReview, setNewReview] = useState<Review>({
-    id: '0',
+    id: 0,
     name: '',
     comment: '',
-    rating: '★★★☆☆',
+    rating: 0,
     photo: '',
   });
-  const [reviewToDelete, setReviewToDelete] = useState<string | null>(null);
+  const [reviewToDelete, setReviewToDelete] = useState<number | null>(null);
   const [dragOver, setDragOver] = useState<boolean>(false);
 
   const handleAddReview = () => {
     setReviews([...reviews, newReview]);
     setModalOpen(false);
     setNewReview({
-      id: '0',
+      id: 0,
       name: '',
       comment: '',
-      rating: '★★★☆☆',
+      rating: 0,
       photo: '',
     });
   };
 
-  const handleEditReview = (id: string) => {
+  const handleEditReview = (id: number) => {
     const reviewToEdit = reviews.find((review) => review.id === id);
     if (reviewToEdit) {
       setNewReview({ ...reviewToEdit });
@@ -55,7 +63,7 @@ const ReviewPage: React.FC = () => {
     }
   };
 
-  const handleDeleteReview = (id: string) => {
+  const handleDeleteReview = (id: number) => {
     setReviewToDelete(id);
     setConfirmModalOpen(true);
   };
@@ -102,7 +110,7 @@ const ReviewPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8 block with-shadow">
+    <div className="container mx-auto mt-8 block">
       <h1 className="text-lg font-semibold mb-4">Customer Reviews</h1>
 
       <button
@@ -114,7 +122,7 @@ const ReviewPage: React.FC = () => {
 
       <table className="w-full">
         <thead>
-          <tr className='bg-gray-300'>
+          <tr>
             <th className="text-left">ID</th>
             <th className="text-left">Photo</th>
             <th className="text-left">Name</th>
@@ -135,11 +143,9 @@ const ReviewPage: React.FC = () => {
               <td>{review.name}</td>
               <td>{review.comment}</td>
               <td>
-                <div className="flex">
-                  {review.rating.split('').map((char, index) => (
-                    <span key={index} className="text-yellow-500">{char}</span>
-                  ))}
-                </div>
+                {Array.from({ length: review.rating }, (_, index) => (
+                  <StarIcon key={index} filled />
+                ))}
               </td>
               <td>
                 <button
@@ -183,17 +189,14 @@ const ReviewPage: React.FC = () => {
             </label>
             <label className="block mb-4">
               Rating:
-              <select
-                className="form-select mt-1 block w-full"
+              <input
+                type="number"
+                min="1"
+                max="5"
+                className="form-input mt-1 block w-full"
                 value={newReview.rating}
-                onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
-              >
-                <option value="★★★★★">★★★★★</option>
-                <option value="★★★★☆">★★★★☆</option>
-                <option value="★★★☆☆">★★★☆☆</option>
-                <option value="★★☆☆☆">★★☆☆☆</option>
-                <option value="★☆☆☆☆">★☆☆☆☆</option>
-              </select>
+                onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value, 10) })}
+              />
             </label>
             <div className="mb-4">
               <label
@@ -262,274 +265,6 @@ const ReviewPage: React.FC = () => {
 };
 
 export default ReviewPage;
-
-
-
-// // src/components/ReviewPage.tsx
-
-// import React, { useState, ChangeEvent } from 'react';
-// import '../styles/review.css';
-
-// interface Review {
-//   id: string;
-//   name: string;
-//   comment: string;
-//   rating: string; // Rating represented as a string of star icons
-//   photo: string;
-// }
-
-// const ReviewPage: React.FC = () => {
-//   const initialReviews: Review[] = [
-//     { id: '1', name: 'John Doe', comment: 'Great product!', rating: '★★★★★', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-//     { id: '2', name: 'Jane Smith', comment: 'Not bad, but could be better.', rating: '★★★☆☆', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-//     { id: '3', name: 'Alice Johnson', comment: 'Excellent service!', rating: '★★★★☆', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-//     { id: '4', name: 'Bob Williams', comment: 'Product was damaged upon arrival.', rating: '★★☆☆☆', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-//     { id: '5', name: 'Eva Davis', comment: 'Fast shipping, good quality.', rating: '★★★★★', photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg' },
-//   ];
-
-//   const [reviews, setReviews] = useState<Review[]>(initialReviews);
-//   const [modalOpen, setModalOpen] = useState<boolean>(false);
-//   const [confirmModalOpen, setConfirmModalOpen] = useState<boolean>(false);
-//   const [newReview, setNewReview] = useState<Review>({
-//     id: '0',
-//     name: '',
-//     comment: '',
-//     rating: '★★★☆☆',
-//     photo: '',
-//   });
-//   const [reviewToDelete, setReviewToDelete] = useState<string | null>(null);
-//   const [dragOver, setDragOver] = useState<boolean>(false);
-
-//   const handleAddReview = () => {
-//     setReviews([...reviews, newReview]);
-//     setModalOpen(false);
-//     setNewReview({
-//       id: '0',
-//       name: '',
-//       comment: '',
-//       rating: '★★★☆☆',
-//       photo: '',
-//     });
-//   };
-
-//   const handleEditReview = (id: string) => {
-//     const reviewToEdit = reviews.find((review) => review.id === id);
-//     if (reviewToEdit) {
-//       setNewReview({ ...reviewToEdit });
-//       setModalOpen(true);
-//     }
-//   };
-
-//   const handleDeleteReview = (id: string) => {
-//     setReviewToDelete(id);
-//     setConfirmModalOpen(true);
-//   };
-
-//   const confirmDelete = () => {
-//     if (reviewToDelete !== null) {
-//       const updatedReviews = reviews.filter((review) => review.id !== reviewToDelete);
-//       setReviews(updatedReviews);
-//       setReviewToDelete(null);
-//       setConfirmModalOpen(false);
-//     }
-//   };
-
-//   const cancelDelete = () => {
-//     setReviewToDelete(null);
-//     setConfirmModalOpen(false);
-//   };
-
-//   const handleFileDrop = (e: React.DragEvent<HTMLInputElement>) => {
-//     e.preventDefault();
-//     const file = e.dataTransfer.files[0];
-
-//     if (file) {
-//       const reader = new FileReader();
-//       reader.readAsDataURL(file);
-//       reader.onload = () => {
-//         setNewReview({ ...newReview, photo: reader.result as string });
-//       };
-//     }
-
-//     setDragOver(false);
-//   };
-
-//   const handleFileInput = (e: ChangeEvent<HTMLInputElement>) => {
-//     const file = e.target.files?.[0];
-
-//     if (file) {
-//       const reader = new FileReader();
-//       reader.readAsDataURL(file);
-//       reader.onload = () => {
-//         setNewReview({ ...newReview, photo: reader.result as string });
-//       };
-//     }
-//   };
-
-//   return (
-//     <div className="container mx-auto mt-8 block with-shadow">
-//       <h1 className="text-lg font-semibold mb-4">Customer Reviews</h1>
-
-//       <button
-//         className="add__review font-bold py-2 px-4 mb-4 rounded"
-//         onClick={() => setModalOpen(true)}
-//       >
-//         Add Review
-//       </button>
-
-//       <table className="w-full">
-//         <thead>
-//           <tr className='bg-gray-300'>
-//             <th className="text-left">ID</th>
-//             <th className="text-left">Photo</th>
-//             <th className="text-left">Name</th>
-//             <th className="text-left">Comment</th>
-//             <th className="text-left">Rating</th>
-//             <th className="text-left">Actions</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {reviews.map((review) => (
-//             <tr key={review.id}>
-//               <td>{review.id}</td>
-//               <td>
-//                 {review.photo && (
-//                   <img src={review.photo} alt={`Review by ${review.name}`} className="w-20 h-20 object-cover" />
-//                 )}
-//               </td>
-//               <td>{review.name}</td>
-//               <td>{review.comment}</td>
-//               <td>
-//                 <div className="flex">
-//                   {review.rating.split('').map((char, index) => (
-//                     <span key={index} className="text-yellow-500">{char}</span>
-//                   ))}
-//                 </div>
-//               </td>
-//               <td>
-//                 <button
-//                   className=" text-indigo-900 hover:underline mr-2"
-//                   onClick={() => handleEditReview(review.id)}
-//                 >
-//                   Edit
-//                 </button>
-//                 <button
-//                   className="text-pink-500 hover:underline"
-//                   onClick={() => handleDeleteReview(review.id)}
-//                 >
-//                   Delete
-//                 </button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-
-//       {modalOpen && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-//           <div className="bg-white p-8 rounded-lg">
-//             <h2 className="text-2xl font-bold mb-4">{newReview.id ? 'Edit' : 'Add'} Review</h2>
-//             <label className="block mb-4">
-//               Name:
-//               <input
-//                 type="text"
-//                 className="form-input mt-1 block w-full"
-//                 value={newReview.name}
-//                 onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
-//               />
-//             </label>
-//             <label className="block mb-4">
-//               Comment:
-//               <textarea
-//                 className="form-input mt-1 block w-full"
-//                 value={newReview.comment}
-//                 onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-//               />
-//             </label>
-//             <label className="block mb-4">
-//               Rating:
-//               <select
-//                 className="form-select mt-1 block w-full"
-//                 value={newReview.rating}
-//                 onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
-//               >
-//                 <option value="★★★★★">★★★★★</option>
-//                 <option value="★★★★☆">★★★★☆</option>
-//                 <option value="★★★☆☆">★★★☆☆</option>
-//                 <option value="★★☆☆☆">★★☆☆☆</option>
-//                 <option value="★☆☆☆☆">★☆☆☆☆</option>
-//               </select>
-//             </label>
-//             <div className="mb-4">
-//               <label
-//                 className={`cursor-pointer inline-block px-4 py-2 border rounded-md ${
-//                   dragOver ? 'border-pink-500' : 'border-gray-300'
-//                 } ${
-//                   newReview.photo ? 'bg-green-100 hover:bg-green-200' : 'bg-gray-100 hover:bg-gray-200'
-//                 }`}
-//                 onDragOver={(e) => {
-//                   e.preventDefault();
-//                   setDragOver(true);
-//                 }}
-//                 onDragLeave={() => setDragOver(false)}
-//                 onDrop={(e) => handleFileDrop(e)}
-//               >
-//                 {newReview.photo ? 'Change Photo' : 'Drag & Drop or Click to Upload Photo'}
-//               </label>
-//               <input
-//                 type="file"
-//                 accept="image/*"
-//                 className="hidden"
-//                 onChange={handleFileInput}
-//               />
-//             </div>
-//             <div className="flex justify-end">
-//               <button
-//                 className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 mr-2 rounded"
-//                 onClick={handleAddReview}
-//               >
-//                 {newReview.id ? 'Save' : 'Add'}
-//               </button>
-//               <button
-//                 className=" bg-indigo-950 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded"
-//                 onClick={() => setModalOpen(false)}
-//               >
-//                 Cancel
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-
-//       {confirmModalOpen && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-//           <div className="bg-white p-8 rounded-lg">
-//             <p className="text-lg mb-4">Are you sure you want to delete this review?</p>
-//             <div className="flex justify-end">
-//               <button
-//                 className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 mr-2 rounded"
-//                 onClick={confirmDelete}
-//               >
-//                 Yes
-//               </button>
-//               <button
-//                 className="bg-indigo-950 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded"
-//                 onClick={cancelDelete}
-//               >
-//                 No
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ReviewPage;
-
-
-
 
 
 

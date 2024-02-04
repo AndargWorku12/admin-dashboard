@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/login.css'
 const ForgotPassword: React.FC = () => {
   return (
     <main id="content" role="main" className="w-full max-w-md mx-auto p-6">
@@ -35,7 +35,7 @@ const ForgotPassword: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className=" bg-indigo-950 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold  text-white  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+                  className=" login py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold  text-white  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
                 >
                   Reset password
                 </button>

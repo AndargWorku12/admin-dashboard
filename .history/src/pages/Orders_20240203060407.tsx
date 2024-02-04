@@ -174,7 +174,7 @@ const OrdersPage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4 block">
-      <h1 className="text-2xl font-normal mb-4">Orders</h1>
+      <h1 className="text-2xl font-bold mb-4">Orders</h1>
 
       {/* Add Order Button */}
       <div className="mb-4">

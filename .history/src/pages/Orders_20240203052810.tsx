@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import '../styles/orders.css'
+
 interface Order {
   id: string;
   photo: string | File;
@@ -37,78 +37,6 @@ const OrdersPage: React.FC = () => {
       totalPrice: 100,
     },
     // Add more sample data as needed
-    {
-      id: '3',
-      photo: '',
-      category: 'Books',
-      name: 'React Cookbook',
-      price: 30,
-      quantity: 3,
-      totalPrice: 90,
-    },
-    {
-      id: '4',
-      photo: '',
-      category: 'Home Decor',
-      name: 'Table Lamp',
-      price: 50,
-      quantity: 2,
-      totalPrice: 100,
-    },
-    {
-      id: '5',
-      photo: '',
-      category: 'Electronics',
-      name: 'Smartphone',
-      price: 800,
-      quantity: 1,
-      totalPrice: 800,
-    },
-    {
-      id: '6',
-      photo: '',
-      category: 'Clothing',
-      name: 'Jeans',
-      price: 40,
-      quantity: 3,
-      totalPrice: 120,
-    },
-    {
-      id: '7',
-      photo: '',
-      category: 'Books',
-      name: 'JavaScript Basics',
-      price: 25,
-      quantity: 4,
-      totalPrice: 100,
-    },
-    {
-      id: '8',
-      photo: '',
-      category: 'Home Decor',
-      name: 'Cushions',
-      price: 15,
-      quantity: 6,
-      totalPrice: 90,
-    },
-    {
-      id: '9',
-      photo: '',
-      category: 'Electronics',
-      name: 'Headphones',
-      price: 80,
-      quantity: 2,
-      totalPrice: 160,
-    },
-    {
-      id: '10',
-      photo: '',
-      category: 'Clothing',
-      name: 'Dress',
-      price: 60,
-      quantity: 1,
-      totalPrice: 60,
-    },
   ]);
 
   const [newOrder, setNewOrder] = useState<Order>({
@@ -173,12 +101,12 @@ const OrdersPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 block">
-      <h1 className="text-2xl font-normal mb-4">Orders</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Orders</h1>
 
       {/* Add Order Button */}
       <div className="mb-4">
-        <button onClick={() => setAddModalOpen(true)} className="add  p-2 rounded">
+        <button onClick={() => setAddModalOpen(true)} className="bg-green-500 text-white p-2 rounded">
           Add Order
         </button>
       </div>
@@ -187,7 +115,7 @@ const OrdersPage: React.FC = () => {
       {isAddModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4 add ">Add Order</h2>
+            <h2 className="text-2xl font-bold mb-4">Add Order</h2>
             {/* Input fields for creating new order */}
             <div>
               <label htmlFor="orderCategory">Category:</label>
@@ -239,10 +167,10 @@ const OrdersPage: React.FC = () => {
               />
             </div>
             <div className="flex justify-end">
-              <button onClick={createOrder} className="add p-2 rounded">
+              <button onClick={createOrder} className="bg-blue-500 text-white p-2 rounded">
                 Create
               </button>
-              <button onClick={() => setAddModalOpen(false)} className=" remove ml-2  p-2 rounded">
+              <button onClick={() => setAddModalOpen(false)} className="ml-2 bg-gray-400 text-white p-2 rounded">
                 Cancel
               </button>
             </div>
@@ -287,13 +215,13 @@ const OrdersPage: React.FC = () => {
                       setEditingOrder(order);
                       setEditModalOpen(true);
                     }}
-                    className="add p-2 rounded"
+                    className="bg-yellow-500 text-white p-2 rounded"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => confirmDelete(order)}
-                    className="remove  p-2 rounded ml-2"
+                    className="bg-red-500 text-white p-2 rounded ml-2"
                   >
                     Delete
                   </button>
@@ -320,6 +248,7 @@ const OrdersPage: React.FC = () => {
                 className="p-2 mb-2 border rounded"
               />
             </div>
+            {/* Other input fields for editing the order */}
             <div>
               <label htmlFor="editOrderName">Name:</label>
               <input
@@ -351,10 +280,10 @@ const OrdersPage: React.FC = () => {
               />
             </div>
             <div className="flex justify-end">
-              <button onClick={updateOrder} className="add p-2 rounded">
+              <button onClick={updateOrder} className="bg-blue-500 text-white p-2 rounded">
                 Save
               </button>
-              <button onClick={() => setEditModalOpen(false)} className=" remove ml-2  p-2 rounded">
+              <button onClick={() => setEditModalOpen(false)} className="ml-2 bg-gray-400 text-white p-2 rounded">
                 Cancel
               </button>
             </div>
@@ -368,10 +297,10 @@ const OrdersPage: React.FC = () => {
           <div className="bg-white p-8 rounded-lg">
             <p className="text-xl font-bold mb-4">Are you sure you want to delete this order?</p>
             <div className="flex justify-end">
-              <button onClick={deleteOrder} className="add p-2 rounded">
-                Yes, 
+              <button onClick={deleteOrder} className="bg-red-500 text-white p-2 rounded">
+                Yes, Delete
               </button>
-              <button onClick={() => setDeleteModalOpen(false)} className=" remove ml-2  p-2 rounded">
+              <button onClick={() => setDeleteModalOpen(false)} className="ml-2 bg-gray-400 text-white p-2 rounded">
                 Cancel
               </button>
             </div>
@@ -383,7 +312,6 @@ const OrdersPage: React.FC = () => {
 };
 
 export default OrdersPage;
-
 
 
 

@@ -122,7 +122,7 @@ const CategoryPage: React.FC = () => {
       <h1 className="text-lg font-semibold mb-4">Categories</h1>
 
       <button
-        className="add__category bg-indigo-950 text-white font-bold py-2 px-4 mb-4 rounded"
+        className="add__category font-bold py-2 px-4 mb-4 rounded"
         onClick={() => setModalOpen(true)}
       >
         Add Category

@@ -1,5 +1,3 @@
-
-
 // src/components/ReviewPage.tsx
 
 import React, { useState, ChangeEvent } from 'react';
@@ -9,9 +7,19 @@ interface Review {
   id: string;
   name: string;
   comment: string;
-  rating: string; // Rating represented as a string of star icons
+  rating: string; // Rating represented as an icon string
   photo: string;
 }
+
+const StarIcon: React.FC<{ filled: boolean }> = ({ filled }) => (
+  <svg
+    className={`w-6 h-6 fill-current ${filled ? 'text-yellow-500' : 'text-gray-300'}`}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 2C5.373 2 0 7.373 0 14s5.373 12 12 12 12-5.373 12-12S18.627 2 12 2zm0 22c-6.627 0-12-5.373-12-12S5.373 2 12 2s12 5.373 12 12-5.373 12-12 12zm-1-17v8h2v-8h-2zm0 10v2h2v-2h-2z" />
+  </svg>
+);
 
 const ReviewPage: React.FC = () => {
   const initialReviews: Review[] = [
@@ -135,11 +143,9 @@ const ReviewPage: React.FC = () => {
               <td>{review.name}</td>
               <td>{review.comment}</td>
               <td>
-                <div className="flex">
-                  {review.rating.split('').map((char, index) => (
-                    <span key={index} className="text-yellow-500">{char}</span>
-                  ))}
-                </div>
+                {Array.from({ length: review.rating.length }, (_, index) => (
+                  <StarIcon key={index} filled={review.rating[index] === '★'} />
+                ))}
               </td>
               <td>
                 <button
@@ -207,16 +213,16 @@ const ReviewPage: React.FC = () => {
                   setDragOver(true);
                 }}
                 onDragLeave={() => setDragOver(false)}
-                onDrop={(e) => handleFileDrop(e)}
               >
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={handleFileInput}
+                  onDrop={(e) => handleFileDrop(e)}
+                />
                 {newReview.photo ? 'Change Photo' : 'Drag & Drop or Click to Upload Photo'}
               </label>
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleFileInput}
-              />
             </div>
             <div className="flex justify-end">
               <button
@@ -262,6 +268,8 @@ const ReviewPage: React.FC = () => {
 };
 
 export default ReviewPage;
+
+
 
 
 

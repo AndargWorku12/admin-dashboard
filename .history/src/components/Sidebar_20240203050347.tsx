@@ -10,6 +10,7 @@ import {
     FaTags,
     FaClipboardList,
     FaShoppingCart,
+    FaThList
 } from 'react-icons/fa';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
@@ -21,9 +22,9 @@ interface MenuItem {
     icon: JSX.Element;
 }
 
-// interface SidebarProps {
-//   children: React.ReactNode;
-// }
+interface SidebarProps {
+  children: React.ReactNode;
+}
     const Sidebar: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 

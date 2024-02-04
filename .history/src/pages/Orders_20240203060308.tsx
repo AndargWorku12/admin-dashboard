@@ -174,7 +174,7 @@ const OrdersPage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4 block">
-      <h1 className="text-2xl font-normal mb-4">Orders</h1>
+      <h1 className="text-2xl font-bold mb-4">Orders</h1>
 
       {/* Add Order Button */}
       <div className="mb-4">
@@ -239,7 +239,7 @@ const OrdersPage: React.FC = () => {
               />
             </div>
             <div className="flex justify-end">
-              <button onClick={createOrder} className="add p-2 rounded">
+              <button onClick={createOrder} className="create p-2 rounded">
                 Create
               </button>
               <button onClick={() => setAddModalOpen(false)} className=" remove ml-2  p-2 rounded">
@@ -368,7 +368,7 @@ const OrdersPage: React.FC = () => {
           <div className="bg-white p-8 rounded-lg">
             <p className="text-xl font-bold mb-4">Are you sure you want to delete this order?</p>
             <div className="flex justify-end">
-              <button onClick={deleteOrder} className="add p-2 rounded">
+              <button onClick={deleteOrder} className="delete p-2 rounded">
                 Yes, 
               </button>
               <button onClick={() => setDeleteModalOpen(false)} className=" remove ml-2  p-2 rounded">

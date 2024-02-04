@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import '../styles/orders.css'
+
 interface Order {
   id: string;
   photo: string | File;
@@ -174,11 +174,11 @@ const OrdersPage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4 block">
-      <h1 className="text-2xl font-normal mb-4">Orders</h1>
+      <h1 className="text-2xl font-bold mb-4">Orders</h1>
 
       {/* Add Order Button */}
       <div className="mb-4">
-        <button onClick={() => setAddModalOpen(true)} className="add  p-2 rounded">
+        <button onClick={() => setAddModalOpen(true)} className="bg-green-500 text-white p-2 rounded">
           Add Order
         </button>
       </div>
@@ -187,7 +187,7 @@ const OrdersPage: React.FC = () => {
       {isAddModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4 add ">Add Order</h2>
+            <h2 className="text-2xl font-bold mb-4">Add Order</h2>
             {/* Input fields for creating new order */}
             <div>
               <label htmlFor="orderCategory">Category:</label>
@@ -239,10 +239,10 @@ const OrdersPage: React.FC = () => {
               />
             </div>
             <div className="flex justify-end">
-              <button onClick={createOrder} className="add p-2 rounded">
+              <button onClick={createOrder} className="bg-blue-500 text-white p-2 rounded">
                 Create
               </button>
-              <button onClick={() => setAddModalOpen(false)} className=" remove ml-2  p-2 rounded">
+              <button onClick={() => setAddModalOpen(false)} className="ml-2 bg-gray-400 text-white p-2 rounded">
                 Cancel
               </button>
             </div>
@@ -287,13 +287,13 @@ const OrdersPage: React.FC = () => {
                       setEditingOrder(order);
                       setEditModalOpen(true);
                     }}
-                    className="add p-2 rounded"
+                    className="bg-yellow-500 text-white p-2 rounded"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => confirmDelete(order)}
-                    className="remove  p-2 rounded ml-2"
+                    className="bg-red-500 text-white p-2 rounded ml-2"
                   >
                     Delete
                   </button>
@@ -351,10 +351,10 @@ const OrdersPage: React.FC = () => {
               />
             </div>
             <div className="flex justify-end">
-              <button onClick={updateOrder} className="add p-2 rounded">
+              <button onClick={updateOrder} className="bg-blue-500 text-white p-2 rounded">
                 Save
               </button>
-              <button onClick={() => setEditModalOpen(false)} className=" remove ml-2  p-2 rounded">
+              <button onClick={() => setEditModalOpen(false)} className="ml-2 bg-gray-400 text-white p-2 rounded">
                 Cancel
               </button>
             </div>
@@ -368,10 +368,10 @@ const OrdersPage: React.FC = () => {
           <div className="bg-white p-8 rounded-lg">
             <p className="text-xl font-bold mb-4">Are you sure you want to delete this order?</p>
             <div className="flex justify-end">
-              <button onClick={deleteOrder} className="add p-2 rounded">
-                Yes, 
+              <button onClick={deleteOrder} className="bg-red-500 text-white p-2 rounded">
+                Yes, Delete
               </button>
-              <button onClick={() => setDeleteModalOpen(false)} className=" remove ml-2  p-2 rounded">
+              <button onClick={() => setDeleteModalOpen(false)} className="ml-2 bg-gray-400 text-white p-2 rounded">
                 Cancel
               </button>
             </div>
