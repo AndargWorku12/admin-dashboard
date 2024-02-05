@@ -141,7 +141,7 @@ const ReviewPage: React.FC = () => {
               <td>{review.id}</td>
               <td>
                 {review.photo && (
-                  <img src={review.photo} alt={`Review by ${review.name}`} className="w-16 h-16 rounded-md m-1 object-cover" />
+                  <img src={review.photo} alt={`Review by ${review.name}`} className="w-20 h-20 object-cover" />
                 )}
               </td>
               <td>{review.name}</td>

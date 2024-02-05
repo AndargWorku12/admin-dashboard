@@ -152,7 +152,7 @@ const UserPage: React.FC = () => {
               <td>{user.id}</td>
               <td>
                 {user.photo && (
-                  <img src={user.photo} alt={`User ${user.username}`} className="w-16 h-16 rounded-md m-1 object-cover" />
+                  <img src={user.photo} alt={`User ${user.username}`} className="w-20 h-20 object-cover" />
                 )}
               </td>
               <td>{user.firstName}</td>

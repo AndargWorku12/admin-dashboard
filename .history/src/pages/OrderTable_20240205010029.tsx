@@ -40,7 +40,7 @@ const OrderTable: React.FC<OrderTableProps> = ({ orders, onEdit, onDelete }) => 
               <td className="px-6 py-4 whitespace-nowrap">{order.category}</td>
               <td className="px-6 py-4 whitespace-nowrap">{order.price}</td>
               <td className="px-6 py-4 whitespace-nowrap">{order.quantity}</td>
-              <td className="px-6 py-4 whitespace-nowrap ">{order.photo}</td>
+              <td className="px-6 py-4 whitespace-nowrap w-16 h-16 rounded-md m-1">{order.photo}</td>
               <td className="px-6 py-4 whitespace-nowrap">{order.totalPrice}</td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <button

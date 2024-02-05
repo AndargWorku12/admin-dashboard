@@ -35,6 +35,7 @@ type RevenueData = {
 
 const App: React.FC = () => {
 
+
   const saleData: SaleData[] = [
     { date: '2022-01-01', amount: 100 },
     { date: '2022-01-02', amount: 150 },
@@ -63,7 +64,7 @@ const App: React.FC = () => {
  
   
   return (
-    <div >
+    <div>
     <BrowserRouter>
     <Sidebar>
       <Routes>

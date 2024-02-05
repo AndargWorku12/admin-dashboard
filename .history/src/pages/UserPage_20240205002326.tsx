@@ -19,16 +19,16 @@ interface User {
 const UserPage: React.FC = () => {
   // Sample User Data
   const initialUsers: User[] = [
-    { id: '1', firstName: 'John', lastName: 'Doe', username: 'john_doe', email: 'john@example.com', age: 25, gender: 'Male', status: 'Active', photo: 'https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg' },
-    { id: '2', firstName: 'Jane', lastName: 'Smith', username: 'jane_smith', email: 'jane@example.com', age: 30, gender: 'Female', status: 'Inactive', photo: 'https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg' },
-    { id: '3', firstName: 'Alice', lastName: 'Johnson', username: 'alice_j', email: 'alice@example.com', age: 28, gender: 'Female', status: 'Active', photo: 'https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg' },
-    { id: '4', firstName: 'Bob', lastName: 'Williams', username: 'bob_w', email: 'bob@example.com', age: 22, gender: 'Male', status: 'Active', photo: 'https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg' },
-    { id: '5', firstName: 'Eva', lastName: 'Davis', username: 'eva_d', email: 'eva@example.com', age: 35, gender: 'Female', status: 'Inactive', photo: 'https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg' },
-    { id: '6', firstName: 'Chris', lastName: 'Anderson', username: 'chris_a', email: 'chris@example.com', age: 40, gender: 'Male', status: 'Active', photo: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg' },
-    { id: '7', firstName: 'Megan', lastName: 'White', username: 'megan_w', email: 'megan@example.com', age: 28, gender: 'Female', status: 'Active', photo: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg' },
-    { id: '8', firstName: 'Alex', lastName: 'Brown', username: 'alex_b', email: 'alex@example.com', age: 32, gender: 'Male', status: 'Inactive', photo: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg' },
-    { id: '9', firstName: 'Sophia', lastName: 'Martin', username: 'sophia_m', email: 'sophia@example.com', age: 27, gender: 'Female', status: 'Active', photo: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg' },
-    { id: '10', firstName: 'Jack', lastName: 'Taylor', username: 'jack_t', email: 'jack@example.com', age: 33, gender: 'Male', status: 'Active', photo: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg' },
+    { id: '1', firstName: 'John', lastName: 'Doe', username: 'john_doe', email: 'john@example.com', age: 25, gender: 'Male', status: 'Active', photo: '' },
+    { id: '2', firstName: 'Jane', lastName: 'Smith', username: 'jane_smith', email: 'jane@example.com', age: 30, gender: 'Female', status: 'Inactive', photo: '' },
+    { id: '3', firstName: 'Alice', lastName: 'Johnson', username: 'alice_j', email: 'alice@example.com', age: 28, gender: 'Female', status: 'Active', photo: '' },
+    { id: '4', firstName: 'Bob', lastName: 'Williams', username: 'bob_w', email: 'bob@example.com', age: 22, gender: 'Male', status: 'Active', photo: '' },
+    { id: '5', firstName: 'Eva', lastName: 'Davis', username: 'eva_d', email: 'eva@example.com', age: 35, gender: 'Female', status: 'Inactive', photo: '' },
+    { id: '6', firstName: 'Chris', lastName: 'Anderson', username: 'chris_a', email: 'chris@example.com', age: 40, gender: 'Male', status: 'Active', photo: '' },
+    { id: '7', firstName: 'Megan', lastName: 'White', username: 'megan_w', email: 'megan@example.com', age: 28, gender: 'Female', status: 'Active', photo: '' },
+    { id: '8', firstName: 'Alex', lastName: 'Brown', username: 'alex_b', email: 'alex@example.com', age: 32, gender: 'Male', status: 'Inactive', photo: '' },
+    { id: '9', firstName: 'Sophia', lastName: 'Martin', username: 'sophia_m', email: 'sophia@example.com', age: 27, gender: 'Female', status: 'Active', photo: '' },
+    { id: '10', firstName: 'Jack', lastName: 'Taylor', username: 'jack_t', email: 'jack@example.com', age: 33, gender: 'Male', status: 'Active', photo: '' },
   ];
 
   // State Hooks
@@ -152,7 +152,7 @@ const UserPage: React.FC = () => {
               <td>{user.id}</td>
               <td>
                 {user.photo && (
-                  <img src={user.photo} alt={`User ${user.username}`} className="w-16 h-16 rounded-md m-1 object-cover" />
+                  <img src={user.photo} alt={`User ${user.username}`} className="w-10 h-10 object-cover" />
                 )}
               </td>
               <td>{user.firstName}</td>

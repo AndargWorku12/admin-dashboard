@@ -83,7 +83,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onDelete, onEdit,
             className="border p-2 rounded-md"
           />
         </div>
-        <button onClick={handleFilter} className={`filter px-4 py-2 ml-4 rounded-md hover:m-2 border ${
+        <button onClick={handleFilter} className={`filter px-4 py-2 ml-4 rounded-md ${
             nightMode ? 'hover:bg-red-600' : 'hover:bg-red-700'
           }`}>
           Filter

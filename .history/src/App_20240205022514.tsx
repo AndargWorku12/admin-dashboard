@@ -35,6 +35,13 @@ type RevenueData = {
 
 const App: React.FC = () => {
 
+  const [nightMode, setNightMode] = useState(false);
+
+  const toggleNightMode = () => {
+    setNightMode((prevNightMode) => !prevNightMode);
+  };
+
+
   const saleData: SaleData[] = [
     { date: '2022-01-01', amount: 100 },
     { date: '2022-01-02', amount: 150 },
@@ -63,9 +70,9 @@ const App: React.FC = () => {
  
   
   return (
-    <div >
+    <div className={`app-container ${nightMode ? 'night-mode' : ''}`}>
     <BrowserRouter>
-    <Sidebar>
+    <Sidebar nightMode={nightMode} onToggleNightMode={toggleNightMode}>
       <Routes>
         <Route path="/" element={<Dashboard saleData={saleData} revenueData={revenueData}  />} />
         <Route path="/dashboard" element={<Dashboard saleData={saleData} revenueData={revenueData}  />} />
